@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>ATM - Masukan Kartu</title>
+		<script src="https://cdn.tailwindcss.com"></script>
+	</head>
+	<body class="bg-[#324154] px-28 py-10 h-[100vh] flex items-center">
+		<div class="container bg-[#597298] rounded-lg flex">
+			<div
+				class="heading w-8/12 flex flex-col items-center justify-center text-white text-center text-[25pt] font-mono px-10"
+			>
+				<h1>Silahkan Pilih Paket Nominal</h1>
+				<div class="flex gap-[100px]">
+          <div>
+            <p onclick="Click(penarikan.seratus)"><- 100.000</p>
+            <p onclick="Click(penarikan.duaratus)"><- 200.000</p>
+            <p onclick="Click(penarikan.tigaratus)"><- 300.000</p>
+            <a href="nominal.html"><- Nominal <br> Lain </a>
+          </div>
+          <div class="text-end">
+            <p onclick="Click(penarikan.limaratus)"> 500.000 -></p>
+            <p onclick="Click(penarikan.satujuta)"> 1.000.000 -></p>
+            <p onclick="Click(penarikan.stngahjuta)"> 1.500.000 -></p>
+            <a onclick="alert(`Fitur Tidak Tersedia`)">Transaksi -> <br> Lain </a>
+          </div>
+        </div>
+			</div>
+			<a href="/src/pages/pilihBahasa.html">
+				<img class="rounded-lg" src="/src/images/ambil-uang.jpg" />
+			</a>
+		</div>
+    <script>
+      let penarikan ={
+        seratus : 100000,
+        duaratus : 200000,
+        tigaratus : 300000,
+        limaratus : 500000,
+        satujuta : 1000000,
+        stngahjuta : 1500000,
+      };
+      let uang = 5000000
+      let newUang
+      alert(`Sisa Saldo Anda Adalah ${uang}`)
+
+      function Click(value) {
+        if (uang < value) {
+          alert("Saldo Tidak Cukup")
+        }
+        else{
+          newUang = uang - value
+          uang = newUang
+          const valueuang = confirm(`Anda berhasil menarik saldo ${value}, Sisa saldo anda adalah ${uang}`)
+            
+        }
+      }
+    </script>
+	</body>
+</html>
