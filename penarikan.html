@@ -23,12 +23,13 @@
             <p onclick="Click(penarikan.limaratus)"> 500.000 -></p>
             <p onclick="Click(penarikan.satujuta)"> 1.000.000 -></p>
             <p onclick="Click(penarikan.stngahjuta)"> 1.500.000 -></p>
-            <a onclick="alert(`Fitur Tidak Tersedia`)">Transaksi -> <br> Lain </a>
+            <a onclick="confirm(`Fitur tidak tersedia, apakah anda ingin membatalkan ?`) ">Transaksi -> <br> Lain </a>
+
           </div>
         </div>
 			</div>
-			<a href="/src/pages/pilihBahasa.html">
-				<img class="rounded-lg" src="/src/images/ambil-uang.jpg" />
+			<a href="/pilihbahasa.html">
+				<img class="rounded-lg" src="/images/ambil-uang.jpg" />
 			</a>
 		</div>
     <script>
@@ -40,18 +41,18 @@
         satujuta : 1000000,
         stngahjuta : 1500000,
       };
-      let uang = 5000000
+      let uang = 1000000
       let newUang
       alert(`Sisa Saldo Anda Adalah ${uang}`)
 
       function Click(value) {
         if (uang < value) {
-          alert("Saldo Tidak Cukup")
+          alert("Saldo Tidak Cukup!")
         }
         else{
           newUang = uang - value
           uang = newUang
-          const valueuang = confirm(`Anda berhasil menarik saldo ${value}, Sisa saldo anda adalah ${uang}`)
+          const valueuang = confirm(`Anda Mengambil Uang Sebesar ${value}, Saldo anda tinggal ${uang}`)
             
         }
       }
