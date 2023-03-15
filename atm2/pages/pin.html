@@ -18,26 +18,27 @@
         </div>
         <h1 class="mt-10">Tekan "CANCEL" Untuk Membatalkan</h1>
 			</div>
-			<a href="/src/pages/pilihBahasa.html">
-				<img class="rounded-lg" src="/src/images/masukan-pin.jpg" />
+			<a href="/pilihbahasa.html">
+				<img class="rounded-lg" src="/images/masukan-pin.jpg" />
 			</a>
 		</div>
     <script>
       let pin = document.getElementById("pin")
       let user ={
-        pin : "1234"
+        pin : "123456"
       }
       function Click() {
         if (pin.value.length > 0) {
           if (pin.value == user.pin) {
-            window.location.href ="pilihBahasa.html"
+            window.location.href ="/penarikan.html"
           }else{
-            alert("Pin Salah")
+            alert("Pin Yang Dimasukan Salah!")
           }
         }else{
-          alert("Pin Tidak Boleh Kosong")
+          alert("Pin Tidak Boleh Kosong!")
         }
       }
     </script>
 	</body>
 </html>
+
