@@ -15,27 +15,31 @@
 				<div>
           <input type="text" id="tes" class="text-black">
           <a onclick="Click()" class="text-green-500">ENTER >></a>
+          <a href="ambilkartu.html" onclick="Click()" class="text-red-500">CANCEL >></a>
         </div>
         <h1 class="mt-10">Tekan "CANCEL" Untuk Membatalkan</h1>
 			</div>
-			<a href="/src/pages/pilihBahasa.html">
-				<img class="rounded-lg" src="/src/images/ambil-uang.jpg" />
+			<a href="/">
+				<img class="rounded-lg" src="/images/ambil-uang.jpg" />
 			</a>
 		</div>
     <script>
       let tes = document.getElementById("tes")
-      let saldo = 5000000
-      let newSaldo
-
-      function Click() {
-        if (saldo < tes.value) {
-          alert("Saldo Tidak Cukup")
-        }else if (tes.value % 50000 == 0) {
-          let konfir = confirm(`Anda Berhasil Menarik Saldo ${tes.value}`)
-          if (konfir) {
-            newSaldo = saldo - tes.value
-            saldo = newSaldo
-            alert(`Sisa Saldo Anda Adalah ${saldo}`)
-          }
-        }else{
-          alert("Gunakan Pecahan 100.000 dan 50.000")
+	  let saldo = 1000000
+	  let newSaldo
+	  
+	  function Click() {
+		if (saldo < tes.value) {
+			alert("Saldo Tidak Cukup")
+		}else if (tes.value % 50000 == 0) {
+			let konfir = confirm(`Anda Memiliki Saldo ${saldo}`)
+			if (konfir) {
+				newSaldo = saldo - tes.value
+				saldo = newSaldo
+				alert(`Sisa Saldo Anda Adalah ${saldo}`)
+			}
+		}else{
+			alert("Nominal Tidak Sesuai!")
+		}
+	  }
+    </script>
