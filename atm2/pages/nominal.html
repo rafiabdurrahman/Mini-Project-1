@@ -19,27 +19,26 @@
         </div>
         <h1 class="mt-10">Tekan "CANCEL" Untuk Membatalkan</h1>
 			</div>
-			<a href="/">
+			<a href="pilihbahasa.html">
 				<img class="rounded-lg" src="/images/ambil-uang.jpg" />
 			</a>
 		</div>
     <script>
-      let tes = document.getElementById("tes")
-	  let saldo = 1000000
-	  let newSaldo
-	  
+      let nominal = document.getElementById('nominal')
+	  let saldo = 100000
+
 	  function Click() {
 		if (saldo < tes.value) {
-			alert("Saldo Tidak Cukup")
+			alert('Saldo Tidak Cukup')
 		}else if (tes.value % 50000 == 0) {
-			let konfir = confirm(`Anda Memiliki Saldo ${saldo}`)
-			if (konfir) {
-				newSaldo = saldo - tes.value
-				saldo = newSaldo
-				alert(`Sisa Saldo Anda Adalah ${saldo}`)
+			let konfir = confirm('Anda Berhasil Menarik Saldo ${tes.value}, Sisa Saldo Anda Adalah ${saldo - tes.value}')
+			if (konfir == true) {
+				location.href = 'ambilkartu.html'
 			}
 		}else{
-			alert("Nominal Tidak Sesuai!")
+			alert('Nominal Tidak Sesuai')
 		}
-	  }
+}
     </script>
+	</body>
+</html>
