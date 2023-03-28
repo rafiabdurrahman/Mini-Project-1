@@ -28,17 +28,21 @@
 	  let saldo = 100000
 
 	  function Click() {
-		if (saldo < tes.value) {
-			alert('Saldo Tidak Cukup')
-		}else if (tes.value % 50000 == 0) {
-			let konfir = confirm('Anda Berhasil Menarik Saldo ${tes.value}, Sisa Saldo Anda Adalah ${saldo - tes.value}')
-			if (konfir == true) {
-				location.href = 'ambilkartu.html'
-			}
-		}else{
-			alert('Nominal Tidak Sesuai')
+    if (tes.value.length > 0) {
+		if (tes.value > 0 && tes.value % 50000 == 0) {
+			alert(
+				`Anda akan mengambil saldo sebesar ${
+					tes.value
+				}, Sisa saldo anda ${saldo - tes.value}` 
+			); location.href ='ambilkartu.html'
+		}else {
+			alert("Nominal Tidak Sesuai");
 		}
-}
+	}else {
+		alert("Tidak Boleh Kosong");
+	}
+ }
+
     </script>
 	</body>
 </html>
