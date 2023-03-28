@@ -34,16 +34,17 @@
 			</a>
 		</div>
     <script>
-      let penarikan ={
-        seratus : 100000,
-        duaratus : 200000,
-        tigaratus : 300000,
-        limaratus : 500000,
-        satujuta : 1000000,
-        stngahjuta : 1500000,
-      };
-      let uang = 1000000
+      let uang = 1000000;
       let newUang
+       
+      let penarikan ={
+        seratus : "100000",
+        duaratus : "200000",
+        tigaratus : "300000",
+        limaratus : "500000",
+        satujuta : "1000000",
+        stngahjuta : "1500000",
+      };
       alert(`Sisa Saldo Anda Adalah ${uang}`)
 
       function Click(value) {
@@ -51,10 +52,14 @@
           alert("Saldo Tidak Cukup!")
         }
         else{
-          newUang = uang - value
-          uang = newUang
-          const valueuang = confirm(`Anda Mengambil Uang Sebesar ${value}, Saldo anda tinggal ${uang}`)
-            
+          newUang = uang - value;
+          uang = newUang;
+         alert(
+          `anda akan menarik saldo sebesar ${value}, sisa saldo anda ${
+            uang
+          }`
+         )
+          location.href='ambilkartu.html'  
         }
       }
     </script>
